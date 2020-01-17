@@ -11,11 +11,17 @@ public class MemberRepository {
     @PersistenceContext
     private EntityManager em;
 
+    /*
+     * Save a Member
+     */
     public Long save(Member member) {
         em.persist(member);
         return member.getId();
     }
 
+    /*
+     * Retrieve Member
+     */
     public Member find(Long id) {
         return em.find(Member.class, id);
     }
